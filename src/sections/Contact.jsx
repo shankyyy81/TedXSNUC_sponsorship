@@ -7,7 +7,6 @@ import sriramImg from "../assets/images/sriramK.jpeg";
 import sharanImg from "../assets/images/sharan.jpeg";
 import ashwathiImg from "../assets/images/ashwathi.jpeg";
 import vishalImg from "../assets/images/vishal.jpeg";
-import leelaImg from "../assets/images/leela.jpeg";
 
 const boardMembers = [
   {
@@ -41,14 +40,6 @@ const boardMembers = [
     phone: "+91 63823 45578",
     email: "vishal2310253@ssn.edu.in",
     image: vishalImg,
-  },
-  {
-    name: "Leelasri B",
-    role: "License & Compliance Lead",
-    department: "BME, IV Year",
-    phone: "+91 73582 56987",
-    email: "leelasri2311056@ssn.edu.in",
-    image: leelaImg,
   },
 ];
 
