@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-export default function Section({ children, id, className = "" }) {
+export default function Section({ children, id, className = "", style = {} }) {
   return (
-    <section 
+    <section
       id={id}
       className={`section-wrapper ${className}`}
       style={{
@@ -11,7 +11,8 @@ export default function Section({ children, id, className = "" }) {
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        gap: "2rem"
+        gap: "2rem",
+        ...style,
       }}
     >
       <motion.div

@@ -1,6 +1,5 @@
 import Section from "../components/Section";
 import GlassCard from "../components/GlassCard";
-import { motion } from "framer-motion";
 
 export default function Vision() {
   const missions = [

@@ -8,7 +8,7 @@ const springTransition = {
   mass: 1
 };
 
-export default function Button({ children, onClick, variant = "primary", className = "" }) {
+export default function Button({ children, onClick, variant = "primary", className = "", style = {}, type = "button", disabled = false }) {
   const baseStyle = {
     padding: "12px 24px",
     borderRadius: "999px",
@@ -40,11 +40,18 @@ export default function Button({ children, onClick, variant = "primary", classNa
 
   return (
     <motion.button
+      type={type}
       onClick={onClick}
-      style={{ ...baseStyle, ...variants[variant] }}
+      disabled={disabled}
+      style={{
+        ...baseStyle,
+        ...variants[variant],
+        ...(disabled ? { opacity: 0.6, cursor: "not-allowed" } : {}),
+        ...style,
+      }}
       className={className}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.96 }}
+      whileHover={disabled ? {} : { scale: 1.02 }}
+      whileTap={disabled ? {} : { scale: 0.96 }}
       transition={springTransition}
     >
       {children}

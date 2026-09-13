@@ -4,7 +4,7 @@ import "../styles/global.css";
 
 const springConfig = { damping: 20, stiffness: 300, mass: 1 };
 
-export default function GlassCard({ children, className = "" }) {
+export default function GlassCard({ children, className = "", style = {} }) {
   const ref = useRef(null);
   
   // Parallax tilt effect values
@@ -47,6 +47,7 @@ export default function GlassCard({ children, className = "" }) {
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        ...style,
       }}
       className={`glass ${className}`}
       transition={springConfig}

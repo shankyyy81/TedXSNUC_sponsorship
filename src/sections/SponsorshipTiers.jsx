@@ -1,11 +1,15 @@
 import Section from "../components/Section";
 import GlassCard from "../components/GlassCard";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function SponsorshipTiers() {
+  const navigate = useNavigate();
+
   const tiers = [
     {
       title: "Title / Anchor Sponsor",
+      slug: "anchor",
       price: "₹ 1,50,000",
       benefits: [
         '"Presented By" Status on all collateral',
@@ -17,6 +21,7 @@ export default function SponsorshipTiers() {
     },
     {
       title: "Co-Anchor Sponsor",
+      slug: "co-anchor",
       price: "₹ 75,000 - ₹ 1,00,000",
       benefits: [
         'Prominent Logo Placement',
@@ -28,6 +33,7 @@ export default function SponsorshipTiers() {
     },
     {
       title: "Associate Sponsor",
+      slug: "associate",
       price: "₹ 50,000",
       benefits: [
         'Logo Recognition',
@@ -80,7 +86,12 @@ export default function SponsorshipTiers() {
                 ))}
               </ul>
               
-              <Button style={{ width: "100%" }}>Select Tier</Button>
+              <Button
+                style={{ width: "100%" }}
+                onClick={() => navigate(`/partner?tier=${tier.slug}`)}
+              >
+                Select Tier
+              </Button>
             </div>
           </GlassCard>
         ))}
